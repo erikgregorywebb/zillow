@@ -1,3 +1,5 @@
+library(tidyverse)
+
 # import
 url = 'https://raw.githubusercontent.com/erikgregorywebb/zillow/master/data/zillow-utah-zip-code-zhvi-time-series-raw.csv'
 download.file(url, 'zillow.csv')
@@ -10,4 +12,4 @@ zillow_ut = raw %>%
   gather(Month, Value, -RegionID, -RegionName, -State, -City, -Metro, -CountyName)
 
 # export
-write_csv(zillow_ut, 'zillow_ut.csv')
+write_csv(zillow_ut, 'zillow-utah-zip-code-zhvi-time-series-clean.csv', na = '')
